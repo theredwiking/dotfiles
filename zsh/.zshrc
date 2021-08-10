@@ -13,10 +13,7 @@ export ZSH="/home/theredwiking/.config/.oh-my-zsh"
 
 export PATH="$PATH:/home/theredwiking/.local/bin"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Set zsh theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -33,18 +30,9 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 export EDITOR="nvim"
 
 # Personal alias
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dmz-web03="ssh administrator@192.168.116.123"
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
 alias conf="vim ~/.config/zsh/.zshrc"
@@ -54,10 +42,8 @@ alias vim="nvim"
 alias install="sudo apt install"
 alias speed="speedtest-cli"
 alias spicetify="~/.config/spicetify-cli/spicetify"
-alias tor=" ./.config/tor-browser_en-US/Browser/start-tor-browser &"
 alias search="apt search"
 alias remove="sudo apt remove --purge"
-alias haven="cat ~/dyrehaven.txt"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
