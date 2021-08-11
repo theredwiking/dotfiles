@@ -34,22 +34,22 @@ export EDITOR="nvim"
 
 # Personal alias
 
-*************
-*   ALIAS   *
-*************
+#############
+#   ALIAS   #
+#############
 
-** Conf
+## Conf
 alias conf="vim ~/.config/zsh/.zshrc"
 alias wmconf="vim ~/.config/awesome/rc.lua"
 
-** Apt
+## Apt
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
 alias install="sudo apt install"
 alias search="apt search"
 alias remove="sudo apt remove --purge"
 
-** Dunno
+## Dunno
 alias www="cd /var/www"
 alias py="python3"
 alias vim="nvim"
