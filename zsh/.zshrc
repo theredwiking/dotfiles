@@ -33,17 +33,28 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 
 # Personal alias
+
+*************
+*   ALIAS   *
+*************
+
+** Conf
+alias conf="vim ~/.config/zsh/.zshrc"
+alias wmconf="vim ~/.config/awesome/rc.lua"
+
+** Apt
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
-alias conf="vim ~/.config/zsh/.zshrc"
+alias install="sudo apt install"
+alias search="apt search"
+alias remove="sudo apt remove --purge"
+
+** Dunno
 alias www="cd /var/www"
 alias py="python3"
 alias vim="nvim"
-alias install="sudo apt install"
 alias speed="speedtest-cli"
 alias spicetify="~/.config/spicetify-cli/spicetify"
-alias search="apt search"
-alias remove="sudo apt remove --purge"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
