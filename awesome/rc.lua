@@ -23,6 +23,11 @@ require("awful.hotkeys_popup.keys")
 local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
+-- awesome-wm-widgets repo
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local battery_widget = require('awesome-wm-widgets.batteryarc-widget.batteryarc')
+local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -203,22 +208,26 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s, opacity = 0.7 })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
             wibox.widget.systray(),
+            volume_widget{
+                widget_type = 'arc'
+            },
+            battery_widget({
+                show_current_level = true,
+            }),
             mytextclock,
             s.mylayoutbox,
         },
@@ -257,8 +266,6 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -325,6 +332,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "b",     function ()
         awful.util.spawn("firefox") end,
             {description = "launch browser", group = "custom"}),
+
+    awful.key({ modkey },            "w",     function ()
+        logout_popup.launch() end,
+            {description = "logout meny", group = "custom"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -510,19 +521,15 @@ awful.rules.rules = {
     --   properties = { screen = 1, tag = "2" } },
     -- Firefox
     { rule = { name = "Mozilla Firefox" },
-        properties = { screen = 3, opacity = 0.9 } 
-    },
-    -- Opera
-    { rule = { class = "opera" },
-        properties = { screen = 3, tag = 2}
+        properties = { opacity = 0.95 } 
     },
     -- Teams
     { rule = { instance = "teams" },
-        properties = { screen = 2, opacity = 0.9 }
+        properties = { tag = "2", opacity = 0.9 }
     },
     -- Prospect
-    { rule = { instance = "prospect-mail" },
-        properties = { screen = 2, opacity = 0.9 }
+    { rule = { instance = "prospect mail" },
+        properties = { tag = "2", opacity = 0.9 }
     },
 }
 -- }}}
@@ -592,7 +599,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
-awful.spawn.with_shell("picom")
+awful.spawn.with_shell("compton")
 
 -- Scripts
 --  wallpaper
@@ -600,12 +607,5 @@ awesome.connect_signal(
     'startup',
     function(args)
         awful.util.spawn('bash -c "~/Code/bash-sh/feh.sh"')
-    end
-)
---  monitors
-awesome.connect_signal(
-    'startup',
-    function(args)
-        awful.util.spawn('bash -c "~/Code/bash-sh/fixmonitors.sh"')
     end
 )
