@@ -7,11 +7,13 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:/home/theredwiking/.config/flutter/bin"
+export PATH="$SPICETIFY_INSTALL:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+export PATH="$PATH:/home/nihj/go/bin"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/theredwiking/.config/.oh-my-zsh"
-
-export PATH="$PATH:/home/theredwiking/.local/bin"
+export ZSH="/home/nihj/.config/.oh-my-zsh"
 
 # Set zsh theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -41,20 +43,41 @@ export EDITOR="nvim"
 ## Conf
 alias conf="vim ~/.config/zsh/.zshrc"
 alias wmconf="vim ~/.config/awesome/rc.lua"
+alias alc="vim ~/.config/alacritty/alacritty.yml"
+
+##Exa
+alias la="exa -lhg"
+alias lt="exa -lhTg"
 
 ## Apt
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
 alias install="sudo apt install"
 alias search="apt search"
+alias autoremove="sudo apt autoremove"
 alias remove="sudo apt remove --purge"
+
+## Project shotcuts
+alias js='cd "$HOME/Code/javascript/$(ls ~/Code/javascript | fzf --reverse)"'
+alias code='cd "$HOME/Code/$(ls ~/Code | fzf --reverse)"'
+alias golang='cd "$HOME/Code/golang/$(ls ~/Code/golang | fzf --reverse)"'
+
+## Cli
+alias spicetify="/home/nihj/.config/spicetify-cli/spicetify"
 
 ## Dunno
 alias www="cd /var/www"
 alias py="python3"
 alias vim="nvim"
-alias speed="speedtest-cli"
-alias spicetify="~/.config/spicetify-cli/spicetify"
+
+## SSH
+alias kasper="ssh root@136.244.108.84"
+
+### AWS
+alias kuma="ssh -i ~/aws/kali.pem kali@3.8.15.69"
+alias kali="ssh -i ~/aws/kali.pem kali@18.170.36.83"
+alias buster="ssh -i ~/aws/debian.pem admin@3.11.9.189"
+alias bullseye="ssh -i ~/aws/debian.pem admin@35.178.199.19"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -78,8 +101,9 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export PATH="$PATH:/home/theredwiking/.config/flutter/bin"
- 
+export SPICETIFY_INSTALL="/home/nihj/.config/spicetify-cli"
+
+# Nodejs version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
