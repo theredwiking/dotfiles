@@ -1,3 +1,4 @@
+figlet Wiking OS | lolcat
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,13 +8,11 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:/home/theredwiking/.config/flutter/bin"
-export PATH="$SPICETIFY_INSTALL:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
-export PATH="$PATH:/home/nihj/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/nihj/.config/.oh-my-zsh"
+export ZSH="$HOME/.config/.oh-my-zsh"
 
 # Set zsh theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -55,15 +54,13 @@ alias upgrade="sudo apt upgrade"
 alias install="sudo apt install"
 alias search="apt search"
 alias autoremove="sudo apt autoremove"
-alias remove="sudo apt remove --purge"
+alias remove="sudo apt remove --purge --auto-remove"
 
 ## Project shotcuts
-alias js='cd "$HOME/Code/javascript/$(ls ~/Code/javascript | fzf --reverse)"'
-alias code='cd "$HOME/Code/$(ls ~/Code | fzf --reverse)"'
-alias golang='cd "$HOME/Code/golang/$(ls ~/Code/golang | fzf --reverse)"'
+#alias js='cd "$HOME/Code/javascript/$(ls ~/Code/javascript | fzf --reverse)"'
 
 ## Cli
-alias spicetify="/home/nihj/.config/spicetify-cli/spicetify"
+alias skpvpn="zsh ~/Code/bash-sh/skpvpn"
 
 ## Dunno
 alias www="cd /var/www"
@@ -72,12 +69,6 @@ alias vim="nvim"
 
 ## SSH
 alias kasper="ssh root@136.244.108.84"
-
-### AWS
-alias kuma="ssh -i ~/aws/kali.pem kali@3.8.15.69"
-alias kali="ssh -i ~/aws/kali.pem kali@18.170.36.83"
-alias buster="ssh -i ~/aws/debian.pem admin@3.11.9.189"
-alias bullseye="ssh -i ~/aws/debian.pem admin@35.178.199.19"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -101,7 +92,6 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export SPICETIFY_INSTALL="/home/nihj/.config/spicetify-cli"
 
 # Nodejs version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
