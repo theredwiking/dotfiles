@@ -27,6 +27,7 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local battery_widget = require('awesome-wm-widgets.batteryarc-widget.batteryarc')
 local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
+local spotify_shell = require("awesome-wm-widgets.spotify-shell.spotify-shell")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -335,7 +336,15 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey },            "w",     function ()
         logout_popup.launch() end,
-            {description = "logout meny", group = "custom"}),
+            {description = "logout menu", group = "custom"}),
+
+    awful.key({ modkey },            "d",     function()
+        spotify_shell.launch() end,
+            {description = "spotify shell", group = "custom"}),
+
+    awful.key({ modkey },            "a",     function()
+        awful.spawn.with_shell('bash -c "$HOME/Code/bash-sh/jspick"') end,
+            {description = "js project", group = "custom"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -521,7 +530,7 @@ awful.rules.rules = {
     --   properties = { screen = 1, tag = "2" } },
     -- Firefox
     { rule = { name = "Mozilla Firefox" },
-        properties = { opacity = 0.95 } 
+        properties = { opacity = 1 } 
     },
     -- Teams
     { rule = { instance = "teams" },
@@ -600,7 +609,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell("compton")
-
+awful.spawn.with_shell("setxkbmap -option caps:escape")
 -- Scripts
 --  wallpaper
 awesome.connect_signal(
