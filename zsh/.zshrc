@@ -68,7 +68,6 @@ alias py="python3"
 alias vim="nvim"
 
 ## SSH
-alias kasper="ssh root@136.244.108.84"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
