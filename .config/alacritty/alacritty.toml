@@ -2,7 +2,7 @@
 TERM = "alacritty"
 
 [window]
-opacity = 0.95
+opacity = 1.0
 startup_mode ="Windowed"
 decorations_theme_variant = "Dark"
 
