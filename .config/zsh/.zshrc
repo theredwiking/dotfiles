@@ -42,7 +42,7 @@ export EDITOR="nvim"
 
 ## Conf
 alias conf="vim ~/.config/zsh/.zshrc"
-alias alc="vim ~/.config/alacritty/alacritty.yml"
+alias alc="vim ~/.config/alacritty/alacritty.toml"
 alias vimrc="vim ~/.config/nvim/"
 alias wall="vim ~/Code/bash-sh/feh.sh"
 
