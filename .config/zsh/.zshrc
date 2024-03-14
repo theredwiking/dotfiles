@@ -25,7 +25,7 @@ CASE_SENSITIVE="false"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Plugins in $ZSH/plugins/ and $ZSH/custom/plugins/
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions colored-man-pages zsh-dnf alias-finder frontend-search)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions colored-man-pages zsh-apt alias-finder frontend-search)
 
 source $ZSH/oh-my-zsh.sh
 
