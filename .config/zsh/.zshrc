@@ -45,6 +45,7 @@ alias conf="vim ~/.config/zsh/.zshrc"
 alias alc="vim ~/.config/alacritty/alacritty.toml"
 alias vimrc="vim ~/.config/nvim/"
 alias wall="vim ~/Code/bash-sh/feh.sh"
+alias wm="vim ~/.config/awesome/rc.lua"
 
 ##Exa
 alias la="exa --all -lhg"
@@ -76,25 +77,6 @@ alias pdf='xdg-open'
 #############
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
- 
-export HISTFILE="$XDG_DATA_HOME/zsh/history"
-export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
-export LESSKEY="$XDG_CONFIG_HOME/less/lesskey"
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
-export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
-export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME/vagrant/aliases"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-export MYSQLHISTFILE="$XDG_DATA_HOME/mysql/history"
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 # Nodejs version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
