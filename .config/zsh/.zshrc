@@ -9,6 +9,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:/usr/bin/Postman"
 export PATH="$PATH:/usr/local/go/bin"
 
+export CONFDIR="$HOME/.config"
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/go"
 
@@ -79,6 +80,7 @@ alias pdf='xdg-open'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Nodejs version manager
+NVM_DIR="$CONFDIR/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
