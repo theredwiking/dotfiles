@@ -28,6 +28,7 @@ fi
 alias la="exa --all -lhg"
 alias lt="exa --all -lhTg"
 alias nixupdate="home-manager switch --flake ~/.config/home-manager"
+alias project='cd "$HOME/projects/$(ls ~/projects | fzf --reverse)"'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
