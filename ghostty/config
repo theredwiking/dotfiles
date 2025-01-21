@@ -1,0 +1,23 @@
+theme = GitHub Dark
+
+#Font configuration
+font-size = 11
+
+#GTK config
+gtk-titlebar = false
+
+quick-terminal-animation-duration = 0.0
+
+# Keybindings
+keybind = ctrl+alt+k=new_split:up
+keybind = ctrl+alt+j=new_split:down
+keybind = ctrl+alt+l=new_split:right
+keybind = ctrl+alt+h=new_split:left
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+l=goto_split:right
+keybind = ctrl+shift+h=goto_split:left
+keybind = alt+ctrl+shift+h=resize_split:left,10
+keybind = alt+ctrl+shift+l=resize_split:right,10
+keybind = alt+ctrl+shift+k=resize_split:up,10
+keybind = alt+ctrl+shift+j=resize_split:down,10

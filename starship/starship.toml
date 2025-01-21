@@ -1,0 +1,26 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '$directory$git_branch$git_commit$git_state$git_status$golang$nodejs$rust$zig$character'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[x](bold red)'
+
+[golang]
+format = 'using [$symbol($version)](bold cyan)'
+
+[zig]
+format = 'using [$symbol ($version)](bold yellow)'
+symbol = '⚡️ '
+
+[rust]
+format = 'using [🦀 $version](bold red) with [📦 $toolchain ](bold yellow)'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
