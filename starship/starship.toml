@@ -1,7 +1,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = '$directory$git_branch$git_commit$git_state$git_status$golang$nodejs$rust$zig$character'
+format = '$nix_shell$directory$git_branch$git_commit$git_state$git_status$golang$nodejs$rust$zig$character'
 
 # Inserts a blank line between shell prompts
 add_newline = false
@@ -20,6 +20,9 @@ symbol = '⚡️ '
 
 [rust]
 format = 'using [🦀 $version](bold red) with [📦 $toolchain ](bold yellow)'
+
+[nix_shell]
+format = '[$symbol$state( \($name\) )](bold blue)'
 
 # Disable the package module, hiding it from the prompt completely
 [package]
