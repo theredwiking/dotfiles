@@ -73,7 +73,7 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {'gopls', 'html', 'ts_ls'},
+        ensure_installed = {'gopls', 'html', 'ts_ls', 'zls'},
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
