@@ -1,7 +1,7 @@
 #! /bin/bash
 
 langs=$HOME/.local/langs
-version=1.23.4
+version=1.24.0
 
 wget -P /tmp https://go.dev/dl/go$version.linux-amd64.tar.gz
 
