@@ -27,7 +27,7 @@ fi
 # Custom alias's
 alias la="exa --all -lhg"
 alias lt="exa --all -lhTg"
-alias nixupdate="home-manager switch --flake ~/.config/home-manager"
+alias nixupdate="cd ~/.config/home-manager && bash ./update.sh && cd -"
 alias project='cd "$HOME/projects/$(ls ~/projects | fzf --reverse)"'
 
 export NVM_DIR="$HOME/.nvm"
